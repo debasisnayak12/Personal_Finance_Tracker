@@ -37,9 +37,17 @@ function Header() {
     <div className="navbar">
       <p className="logo">Financly.</p>
       {user && (
-        <p className="logo link" onClick={logoutFunc}>
-          Logout
-        </p>
+        <div className="log-section">
+          {user.photoURL ? (
+            <img src={user.photoURL} className="logo-img" />
+          ) : (
+            <span class="material-icons default-acc">account_circle</span>
+          )}
+          <p className="logo link" onClick={logoutFunc}>
+            Logout
+          </p>
+          <span className="material-icons icon" onClick={logoutFunc}>logout</span>
+        </div>
       )}
     </div>
   );

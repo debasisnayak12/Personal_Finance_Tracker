@@ -1,0 +1,58 @@
+.input-flex{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    box-shadow: var(--shadow);
+    border-radius: 0.5rem;
+    padding: 0rem 0.5rem;
+}
+.input-flex input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 0;
+}
+.input-flex input:focus{
+    outline: none;
+}
+.search-icon{
+    color: grey;
+}
+
+.transaction-table{
+    width: 97vw;
+    padding: 0 2rem;
+}
+.search-area{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.table-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.imp-exp-section{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 400px;
+}
+.select-input{
+    width: 30%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow);
+    border-radius: 0.5rem !important;
+}
+
+.select-input > div {
+    border: 0px solid #fff !important;
+}

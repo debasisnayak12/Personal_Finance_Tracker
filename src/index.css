@@ -6,12 +6,47 @@
     --white: #fff;
     --shadow: 0px 0px 30px 8px rgba(227, 227, 227, 0.75);
 }
-
+html {
+    scroll-behavior: smooth;
+  }
 body{
     margin: 0;
     font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 0.3rem;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: grey;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--theme);
+    border-radius: 3rem;
+  }
 input {
     font-family: "Montserrat", sans-serif;
 }
+.custom-input{
+    width: 100%;
+    border-width: 0;
+    border-bottom-width: 1px;
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+    opacity: 0.8;
+}
+.custom-input:focus{
+    outline: none;
+    opacity: 1;
+    transition: 0.2s all;
+}
+.custom-input::placeholder{
+    color: rgba(0, 0, 0, 0.5);
+}
+

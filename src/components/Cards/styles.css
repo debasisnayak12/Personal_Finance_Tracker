@@ -1,0 +1,22 @@
+.my-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem auto;
+}
+.my-card{
+    min-width: 300px;
+    box-shadow: var(--shadow);
+    flex: 1;
+    margin: 1rem;
+    border-radius: 0.5rem;
+}
+.ant-card-head-title{
+    margin: 0 !important;
+    font-weight: 600;
+}
+.my-card p{
+    margin: 0;
+}

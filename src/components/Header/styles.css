@@ -7,19 +7,33 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
+    z-index: 1000;
 }
 
-.logo{
+.logo,.icon{
     color: var(--white);
     font-size: 1.2rem;
     font-weight: 500;
     margin: 0;
 }
-.link{
+.link, .icon{
     opacity: 0.8;
     cursor: pointer;
 }
-.link:hover{
+.link:hover, .icon:hover{
     opacity: 1;
     transition: 0.3s all;
+}
+.log-section{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.logo-img{
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+}
+.default-acc{
+    color: var(--white);
 }
