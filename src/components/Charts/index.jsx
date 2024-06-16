@@ -20,15 +20,7 @@ const Charts = ({ sortedTransactions }) => {
     autoFit: false,
     xField: "date",
     yField: "amount",
-    point: {
-      size: 5,
-      shape: "diamond",
-    },
-    label: {
-      style: {
-        fill: "#aaa",
-      },
-    },
+   
   };
 
   const spendingConfig = {
@@ -47,7 +39,7 @@ const Charts = ({ sortedTransactions }) => {
         <Line {...config} />
       </div>
       <div className="chart-section">
-        <h2>All Expenses</h2>
+         <h2>All Expenses</h2> 
         <Pie {...spendingConfig} />
       </div>
     </div>

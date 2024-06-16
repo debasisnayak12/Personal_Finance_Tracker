@@ -3,13 +3,13 @@ import "./styles.css";
 import { Card, Row } from 'antd';
 import Button from '../Button';
 
-const Cards = ({income, expense, currentBalance, showExpenseModal, showIncomeModal}) => {
+const Cards = ({income, expense, currentBalance, showExpenseModal, showIncomeModal, resetBalance}) => {
   return (
     <div>
         <Row className='my-row'>
             <Card className="my-card" title="Current Balance">
                 <p>₹ {currentBalance}</p>
-                <Button text="Reset Balance" blue={true}/>
+                <Button text="Reset Balance" blue={true} onClick={resetBalance}/>
             </Card>
             <Card className="my-card" title="Total Income">
                 <p>₹ {income}</p>
