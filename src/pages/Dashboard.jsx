@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { auth, db } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import TransactionsTable from "../components/TransactionsTable";
+import Charts from "../components/Charts";
 
 const Dashboard = () => {
   const [transactions, setTransactions] = useState([]);
@@ -48,21 +49,21 @@ const Dashboard = () => {
     addTransaction(newTransaction);
   };
 
-  async function addTransaction(transaction) {
+  async function addTransaction(transaction, many) {
     try {
       const docRef = await addDoc(
         collection(db, `users/${user.uid}/transactions`),
         transaction
       );
       console.log("Document written with ID: ", docRef.id);
-      toast.success("Transaction Added!");
+      if(!many) toast.success("Transaction Added!");
       let newArr = transactions;
       newArr.push(transaction);
       setTransactions(newArr);
       calculateBalance();
     } catch (e) {
       console.error("Error adding document: ", e);
-      toast.error("Couldn't add transaction");
+      if(!many) toast.error("Couldn't add transaction");
     }
   }
 
@@ -108,7 +109,10 @@ const Dashboard = () => {
     setLoading(false);
   }
 
-  
+  let sortedTransactions = transactions.sort((a, b) => {
+    return new Date(a.date) - new Date(b.date);
+  });
+
 
   return (
     <div>
@@ -124,6 +128,7 @@ const Dashboard = () => {
             showExpenseModal={showExpenseModal}
             showIncomeModal={showIncomeModal}
           />
+          {transactions && <Charts sortedTransactions={sortedTransactions} /> }
           <AddExpense
             isExpenseModalVisible={isExpenseModalVisible}
             handleExpenseCancel={handleExpenseCancel}
@@ -134,7 +139,7 @@ const Dashboard = () => {
             handleIncomeCancel={handleIncomeCancel}
             onFinish={onFinish}
           />
-        <TransactionsTable transactions={transactions}/>
+        <TransactionsTable transactions={transactions} addTransaction={addTransaction} fetchTransactions={fetchTransactions}/>
         </>
       )}
     </div>

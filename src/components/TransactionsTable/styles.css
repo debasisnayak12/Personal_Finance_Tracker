@@ -21,10 +21,12 @@
 }
 
 .transaction-table{
-    width: 97vw;
+    width: 95vw;
     padding: 0 2rem;
 }
+
 .search-area{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 1rem;

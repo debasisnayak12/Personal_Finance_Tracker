@@ -1,0 +1,25 @@
+.charts-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background-color: #fafafa;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+}
+.chart-section{
+    display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 1rem;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+.chart-section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
