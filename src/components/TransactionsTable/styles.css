@@ -58,3 +58,34 @@
 .select-input > div {
     border: 0px solid #fff !important;
 }
+
+
+@media screen and (max-width: 1000px){
+    .table-head h2 {
+        font-size: 1rem;
+    }
+    .imp-exp-section {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .table-head h2 {
+        font-size: 1.2rem;
+    }
+    .table-head{
+        display: flex;
+        flex-direction: column;
+    }
+    .transaction-table{
+        padding: 0.5rem;
+    }
+    .ant-table-thead > tr > th,
+    .ant-table-tbody > tr > td {
+      padding: 8px 4px !important;
+      font-size: 0.7rem;
+    }
+    .ant-table{
+        overflow-x: auto;
+    }
+}

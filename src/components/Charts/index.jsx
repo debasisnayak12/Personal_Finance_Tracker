@@ -13,20 +13,44 @@ const Charts = ({ sortedTransactions }) => {
     }
   });
 
+  const getWidth = () => {
+    if (window.innerWidth <= 600) return 400;
+    if (window.innerWidth <= 800) return 600;
+
+    return 800;
+
+  };
+
+  const getHeight = () => {
+    if (window.innerWidth <= 600) return 200;
+    if (window.innerWidth <= 800) return 300;
+
+    return 400;
+    
+  };
+
   const config = {
     data: data,
-    width: 800,
-    height: 400,
+    width: getWidth(),
+    height: getHeight(),
     autoFit: false,
     xField: "date",
     yField: "amount",
-   
+    point: {
+      size: 5,
+      shape: "diamond",
+    },
+    label: {
+      style: {
+        fill: "#aaa",
+      },
+    },
   };
 
   const spendingConfig = {
     data: Object.values(spendingData),
-    width: 500,
-    height: 400,
+    width: getWidth()/2,
+    height: getHeight(),
     angleField: "amount",
     colorField: "tag",
     

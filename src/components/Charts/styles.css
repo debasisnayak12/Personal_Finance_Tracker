@@ -24,3 +24,38 @@
     font-size: 1.5rem;
     color: #333;
   }
+
+  @media screen and (max-width: 1200px){
+    .charts-wrapper{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+  }
+
+  @media screen and (max-width: 800px) {
+    .chart-section h2 {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .charts-wrapper {
+      padding: 0.5rem;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+  
+    .chart-section {
+      width: 100%;
+      padding: 0.5rem;
+    }
+  
+    .chart-section h2 {
+      font-size: 1rem;
+    }
+  }
